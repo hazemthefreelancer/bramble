@@ -4,6 +4,10 @@
   assign image_width = section.settings.image_width
 %}
 
+{% render 'quantity-selector-styles' %}
+{% render 'variant-picker-styles' %}
+{% render 'buy-buttons-styles' %}
+
 <div
   class="
     product-spotlight
@@ -127,11 +131,11 @@
       "name": "Product spotlight",
       "category": "t:categories.products",
       "blocks": {
-        "text_4gyJTw": {
+        "text_HJEXbh": {
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h3>{{ closest.product.title }}</h3>",
+            "text": "<h2>Heading</h2>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -153,11 +157,11 @@
           },
           "blocks": {}
         },
-        "text_M3aFtY": {
+        "text_EMmhA7": {
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "{{ closest.product.description }}",
+            "text": "<p>We make things that work better and last longer. Our products solve real problems with clean design and honest materials.</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -179,79 +183,27 @@
           },
           "blocks": {}
         },
-        "variant_picker_GJR7X9": {
+        "variant_picker_qxnaPV": {
           "type": "variant-picker",
           "name": "t:names.product_variant_picker",
-          "settings": {
-            "variant_style": "buttons",
-            "show_swatches": true,
-            "option_label_text_color": "",
-            "variant_style_class": "default",
-            "custom_variant_background": "{{ settings.color_palette.background }}",
-            "custom_variant_text": "{{ settings.color_palette.foreground }}",
-            "custom_variant_border": "{{ settings.color_palette.foreground }}",
-            "selected_variant_style_class": "default",
-            "custom_selected_variant_background": "{{ settings.color_palette.foreground }}",
-            "custom_selected_variant_text": "{{ settings.color_palette.background }}",
-            "custom_selected_variant_border": "{{ settings.color_palette.foreground }}",
-            "alignment": "left",
-            "padding-block-start": 0,
-            "padding-block-end": 8,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
+          "settings": {},
           "blocks": {}
         },
-        "buy_buttons_XWnWHH": {
+        "buy_buttons_DjJBCA": {
           "type": "buy-buttons",
           "name": "t:names.product_buy_buttons",
-          "settings": {
-            "stacking": false,
-            "text_color": "",
-            "show_pickup_availability": false,
-            "gift_card_form": true,
-            "recipient_button_style": "default",
-            "recipient_button_background": "{{ settings.color_palette.background }}",
-            "recipient_button_text": "{{ settings.color_palette.foreground }}",
-            "recipient_button_border": "{{ settings.color_palette.foreground }}",
-            "selected_recipient_button_style": "default",
-            "selected_recipient_button_background": "{{ settings.color_palette.foreground }}",
-            "selected_recipient_button_text": "{{ settings.color_palette.background }}",
-            "selected_recipient_button_border": "{{ settings.color_palette.foreground }}",
-            "input_style": "default",
-            "input_background_color": "{{ settings.color_palette.background }}",
-            "input_text_color": "{{ settings.color_palette.foreground }}",
-            "input_border_color": "{{ settings.color_palette.foreground }}",
-            "border_width": 1,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
+          "settings": {},
           "blocks": {
             "quantity": {
               "type": "quantity",
               "static": true,
-              "settings": {
-                "input_style": "default",
-                "input_background_color": "{{ settings.color_palette.background }}",
-                "input_text_color": "{{ settings.color_palette.foreground }}",
-                "input_border_color": "{{ settings.color_palette.foreground }}",
-                "border_width": 1,
-                "border_radius": 0
-              },
+              "settings": {},
               "blocks": {}
             },
             "add-to-cart": {
               "type": "add-to-cart",
               "static": true,
-              "settings": {
-                "style_class": "button-secondary",
-                "custom_button_background": "{{ settings.color_palette.foreground }}",
-                "custom_button_text": "{{ settings.color_palette.background }}",
-                "custom_button_border": "{{ settings.color_palette.background }}"
-              },
+              "settings": {},
               "blocks": {}
             },
             "accelerated-checkout": {
@@ -263,7 +215,7 @@
           },
           "block_order": []
         },
-        "spacer_ggDaEj": {
+        "spacer_mQ4yTr": {
           "type": "spacer",
           "name": "t:names.spacer",
           "settings": {
@@ -277,7 +229,7 @@
           },
           "blocks": {}
         },
-        "group_ecyPGw": {
+        "group_NV66JX": {
           "type": "group",
           "name": "Trust badges",
           "settings": {
@@ -317,7 +269,7 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "group_tHydzw": {
+            "group_WVHtVT": {
               "type": "group",
               "name": "Badge",
               "settings": {
@@ -357,7 +309,7 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "icon_RnEfMg": {
+                "icon_HDheD9": {
                   "type": "icon",
                   "name": "t:names.icon",
                   "settings": {
@@ -369,11 +321,11 @@
                   },
                   "blocks": {}
                 },
-                "text_UrNcAQ": {
+                "text_T8RPP9": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p><strong>Badge #1 Heading</strong></p>",
+                    "text": "<p><strong>Badge Heading</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -396,9 +348,9 @@
                   "blocks": {}
                 }
               },
-              "block_order": ["icon_RnEfMg", "text_UrNcAQ"]
+              "block_order": ["icon_HDheD9", "text_T8RPP9"]
             },
-            "group_WKcppQ": {
+            "group_PTzQ89": {
               "type": "group",
               "name": "Badge",
               "settings": {
@@ -438,7 +390,7 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "icon_d6WN6A": {
+                "icon_VyJ9x8": {
                   "type": "icon",
                   "name": "t:names.icon",
                   "settings": {
@@ -450,11 +402,11 @@
                   },
                   "blocks": {}
                 },
-                "text_DMMBAC": {
+                "text_MVVFcK": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p><strong>Badge #1 Heading</strong></p>",
+                    "text": "<p><strong>Badge Heading</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -477,9 +429,9 @@
                   "blocks": {}
                 }
               },
-              "block_order": ["icon_d6WN6A", "text_DMMBAC"]
+              "block_order": ["icon_VyJ9x8", "text_MVVFcK"]
             },
-            "group_WE9qkL": {
+            "group_PLMHg4": {
               "type": "group",
               "name": "Badge",
               "settings": {
@@ -519,7 +471,7 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "icon_QXYVa8": {
+                "icon_ymBwVa": {
                   "type": "icon",
                   "name": "t:names.icon",
                   "settings": {
@@ -531,11 +483,11 @@
                   },
                   "blocks": {}
                 },
-                "text_87twYq": {
+                "text_Eh6NdX": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p><strong>Badge #1 Heading</strong></p>",
+                    "text": "<p><strong>Badge Heading</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -558,10 +510,10 @@
                   "blocks": {}
                 }
               },
-              "block_order": ["icon_QXYVa8", "text_87twYq"]
+              "block_order": ["icon_ymBwVa", "text_Eh6NdX"]
             }
           },
-          "block_order": ["group_tHydzw", "group_WKcppQ", "group_WE9qkL"]
+          "block_order": ["group_WVHtVT", "group_PTzQ89", "group_PLMHg4"]
         },
         "image": {
           "type": "image",
@@ -589,15 +541,15 @@
         }
       },
       "block_order": [
-        "text_4gyJTw",
-        "text_M3aFtY",
-        "variant_picker_GJR7X9",
-        "buy_buttons_XWnWHH",
-        "spacer_ggDaEj",
-        "group_ecyPGw"
+        "text_HJEXbh",
+        "text_EMmhA7",
+        "variant_picker_qxnaPV",
+        "buy_buttons_DjJBCA",
+        "spacer_mQ4yTr",
+        "group_NV66JX"
       ],
       "settings": {
-        "product": "the-complete-snowboard",
+        "product": "",
         "image_position": "row",
         "image_width": 50,
         "padding-block-start": 80,
