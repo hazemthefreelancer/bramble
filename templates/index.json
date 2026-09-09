@@ -531,6 +531,7 @@
                   "name": "t:names.icon",
                   "settings": {
                     "icon": "price_tag",
+                    "image_upload": "shopify://shop_images/feather-light.svg",
                     "width": 40,
                     "link": "",
                     "open_in_new_tab": false,
@@ -542,7 +543,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p><strong>Badge Heading</strong></p>",
+                    "text": "<p><strong>Lightweight</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -615,6 +616,7 @@
                   "name": "t:names.icon",
                   "settings": {
                     "icon": "price_tag",
+                    "image_upload": "shopify://shop_images/lightning-light.svg",
                     "width": 40,
                     "link": "",
                     "open_in_new_tab": false,
@@ -626,7 +628,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p><strong>Badge Heading</strong></p>",
+                    "text": "<p><strong>Fast & Responsive</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -699,6 +701,7 @@
                   "name": "t:names.icon",
                   "settings": {
                     "icon": "price_tag",
+                    "image_upload": "shopify://shop_images/mountains-light.svg",
                     "width": 40,
                     "link": "",
                     "open_in_new_tab": false,
@@ -710,7 +713,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p><strong>Badge Heading</strong></p>",
+                    "text": "<p><strong>Mountain Ready</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
