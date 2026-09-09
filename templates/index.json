@@ -326,7 +326,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "{{ section.settings.product.description }}",
+            "text": "<p>Designed for riders who want a smooth, confident experience on every run. The Perfect Snowboard combines responsive control, reliable stability, and a lightweight construction to make carving, cruising, and exploring the mountain effortless</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
