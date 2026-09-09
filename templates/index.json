@@ -1414,7 +1414,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>Updated content</h2>",
+            "text": "<h2>After selecting a product and updating the content</h2>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
