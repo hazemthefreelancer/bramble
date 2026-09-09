@@ -1,0 +1,143 @@
+{% comment %}
+  ===============================================================================================
+  1. Review it. Mark up what's wrong and why. Annotate screenshots or comment inline, your call.
+  ===============================================================================================
+{% endcomment %}
+{% for product in collections.all.products %}
+  {% comment %} Inline styles {% endcomment %}
+  <div style="width:33%; float:left; padding:10px;">
+    {% comment %}
+      1. 'img_url' is deprecated.
+      2. No conditional check to ensure 'product.featured_image' exists.
+      3. Using the 'master' image size can unnecessarily increase the image payload and negatively impact page performance and CRO results.
+    {% endcomment %}
+    <img src="{{ product.featured_image | img_url: 'master' }}">
+
+    {% comment %} Inline styles {% endcomment %}
+    <h3 style="font-size:22px;">{{ product.title }}</h3>
+
+    {% comment %}
+      1. The 'rte' class is missing.
+      2. A <div> should be used instead of a <p> to avoid broken HTML considering the HTML tags coming from the product description.
+    {% endcomment %}
+    <p>{{ product.description }}</p>
+
+    {% comment %}
+      1. There is no need to use a metafield when the product's 'inventory_quantity' attribute is already available.
+      2. The stock message should only be displayed when the inventory meets the required condition.
+    {% endcomment %}
+    <span>Only {{ product.metafields.custom.stock }} left — hurry!</span>
+
+    {% comment %}
+      Using document.write() is render-blocking and provides no meaningful benefit here.
+      A regular <a> element can be used instead.
+    {% endcomment %}
+    <script>
+      document.write('<a href="{{ product.url }}">Buy now</a>');
+    </script>
+  </div>
+{% endfor %}
+
+{% comment %}
+  ================================================================================
+  2. Refactor it into something you'd actually ship. Working code, not pseudocode.
+  ================================================================================
+{% endcomment %}
+
+{% comment %} Version A: Clickable product card {% endcomment %}
+{% for product in collections.all.products %}
+  <div class="product-card">
+    <a class="product-card__link" href="{{ product.url }}">
+      <div class="product-card__inner">
+        <div class="product-card__image">
+          {% if product.featured_image != blank %}
+            {% assign sizes = 'auto, (min-width: 750px) 50vw, 100vw' %}
+            {% assign widths = '240, 320, 375, 750, 832, 990, 1200, 1600, 1920' %}
+            {{
+              product.featured_image
+              | image_url: width: 1920
+              | image_tag: class: 'image-cover', widths: widths, sizes: sizes, loading: 'lazy'
+            }}
+          {% else %}
+            {{ 'image' | placeholder_svg_tag: 'image-cover placeholder-svg' }}
+          {% endif %}
+        </div>
+
+        <div class="product-card__content">
+          <h3 class="product-card__title">{{ product.title }}</h3>
+
+          <div class="product-card__description rte">{{ product.description }}</div>
+
+          {% assign quantity = product.selected_or_first_available_variant.inventory_quantity %}
+          {% if quantity > 0 and quantity <= 20 %}
+            <span class="product-card__stock-alert">Only {{ quantity }} left — hurry!</span>
+          {% endif %}
+        </div>
+      </div>
+    </a>
+  </div>
+{% endfor %}
+
+{% comment %} Version B: Buy Now button {% endcomment %}
+{% for product in collections.all.products %}
+  <div class="product-card">
+    <div class="product-card__image">
+      {% if product.featured_image != blank %}
+        {% assign sizes = 'auto, (min-width: 750px) 50vw, 100vw' %}
+        {% assign widths = '240, 320, 375, 750, 832, 990, 1200, 1600, 1920' %}
+        {{
+          product.featured_image
+          | image_url: width: 1920
+          | image_tag: class: 'image-cover', widths: widths, sizes: sizes, loading: 'lazy'
+        }}
+      {% else %}
+        {{ 'image' | placeholder_svg_tag: 'image-cover placeholder-svg' }}
+      {% endif %}
+    </div>
+
+    <div class="product-card__content">
+      <h3 class="product-card__title">{{ product.title }}</h3>
+
+      <div class="product-card__description rte">{{ product.description }}</div>
+
+      {% assign quantity = product.selected_or_first_available_variant.inventory_quantity %}
+      {% if quantity > 0 and quantity <= 20 %}
+        <span class="product-card__stock-alert">Only {{ quantity }} left — hurry!</span>
+      {% endif %}
+    </div>
+
+    {% comment %} Buy now is a bit misleading. {% endcomment %}
+    <a class="product-card__link" href="{{ product.url }}">Buy Now</a>
+  </div>
+{% endfor %}
+
+{% comment %}
+  ==================================================================
+  3. You can merge only one change before tomorrow's test goes live.
+  Which one, why, and what are you deliberately leaving for later?
+  ==================================================================
+{% endcomment %}
+
+{% comment %}
+  If I had to change only one thing, I would prioritize refactoring the product image.
+
+  Since this is a CRO test, using the master image size can negatively impact page performance,
+  especially when rendering multiple product cards. A slower page can affect user behavior and
+  make the CRO test results less representative of the actual experience.
+
+  For later, I would address the inline styles, deprecated img_url usage, missing image/stock conditionals, RTE markup, and the document.write() implementation.
+{% endcomment %}
+
+{% comment %}
+  ==================================================================
+  4. Write the short note (3–4 lines) you'd pin for the team on how
+  CRO-test sections get built here from now on.
+  ==================================================================
+{% endcomment %}
+
+{% comment %}
+  1. CRO-test sections should be built with performance, SEO, UX, and accessibility in mind from the start.
+  2. Use Shopify Liquid best practices, optimized assets, semantic HTML, and reusable components.
+  3. Avoid shortcuts that could introduce performance, accessibility, or rendering issues and skew test results.
+  4. Keep the implementation clean and production-ready so the test measures the idea not the implementation.
+{% endcomment %}
