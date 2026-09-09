@@ -749,7 +749,7 @@
           "type": "image",
           "static": true,
           "settings": {
-            "image": "{{ section.settings.product.featured_image }}",
+            "image": "shopify://shop_images/snowboard-lifestyle.jpg",
             "link": "",
             "image_ratio": "adapt",
             "width": "fill",
@@ -780,7 +780,7 @@
       ],
       "name": "Product spotlight",
       "settings": {
-        "product": "",
+        "product": "the-complete-snowboard",
         "image_position": "row",
         "image_width": 50,
         "padding-block-start": 80,
