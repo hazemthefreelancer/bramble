@@ -32,13 +32,13 @@
 </script>
 
 {% comment %}
-Deliberate call: Section reusability
+  Deliberate call: Section reusability
 
-Instead of using static product-specific blocks, such as product media, title, or description, similar to the original Featured Product section, I intentionally used dynamic resource blocks for elements like images, headings, and text.
+  Instead of using static product-specific blocks, such as product media, title, or description, similar to the original Featured Product section, I intentionally used dynamic resource blocks for elements like images, headings, and text.
 
-By default, each block pulls the relevant data from the closest product in the section, allowing the content to update dynamically while still giving merchants the flexibility to override it when needed.
+  By default, each block pulls the relevant data from the closest product in the section, allowing the content to update dynamically while still giving merchants the flexibility to override it when needed.
 
-This approach makes the section more reusable across different use cases. For example, merchants can replace the default product image with a lifestyle image, use a campaign-specific heading, or customize the text while keeping the product data dynamic by default.
+  This approach makes the section more reusable across different use cases. For example, merchants can replace the default product image with a lifestyle image, use a campaign-specific heading, or customize the text while keeping the product data dynamic by default.
 {% endcomment %}
 
 {% stylesheet %}
@@ -196,7 +196,9 @@ This approach makes the section more reusable across different use cases. For ex
         "buy_buttons_jqedht": {
           "type": "buy-buttons",
           "name": "t:names.product_buy_buttons",
-          "settings": {},
+          "settings": {
+            "show_pickup_availability": false
+          },
           "blocks": {
             "quantity": {
               "type": "quantity",
