@@ -31,6 +31,11 @@
   {{ section.settings.product | structured_data }}
 </script>
 
+{% comment %}
+  Deliberate call
+  ===============
+{% endcomment %}
+
 {% stylesheet %}
   .product-spotlight__container {
     display: flex;
@@ -127,11 +132,11 @@
       "name": "Product spotlight",
       "category": "t:categories.products",
       "blocks": {
-        "text_HJEXbh": {
+        "text_cKM8AW": {
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>Heading</h2>",
+            "text": "<h2>{{ section.settings.product.title }}</h2>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -153,11 +158,11 @@
           },
           "blocks": {}
         },
-        "text_EMmhA7": {
+        "text_wE3E6F": {
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>We make things that work better and last longer. Our products solve real problems with clean design and honest materials.</p>",
+            "text": "{{ section.settings.product.description }}",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -179,13 +184,11 @@
           },
           "blocks": {}
         },
-        "variant_picker_qxnaPV": {
+        "variant_picker_fcbWF3": {
           "type": "variant-picker",
-          "name": "t:names.product_variant_picker",
-          "settings": {},
-          "blocks": {}
+          "name": "t:names.product_variant_picker"
         },
-        "buy_buttons_DjJBCA": {
+        "buy_buttons_jqedht": {
           "type": "buy-buttons",
           "name": "t:names.product_buy_buttons",
           "settings": {},
@@ -211,7 +214,7 @@
           },
           "block_order": []
         },
-        "spacer_mQ4yTr": {
+        "spacer_TK8HEM": {
           "type": "spacer",
           "name": "t:names.spacer",
           "settings": {
@@ -225,7 +228,7 @@
           },
           "blocks": {}
         },
-        "group_NV66JX": {
+        "group_LXtjEW": {
           "type": "group",
           "name": "Trust badges",
           "settings": {
@@ -265,7 +268,7 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "group_WVHtVT": {
+            "group_DKLKYe": {
               "type": "group",
               "name": "Badge",
               "settings": {
@@ -305,7 +308,7 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "icon_HDheD9": {
+                "icon_i7Hqtz": {
                   "type": "icon",
                   "name": "t:names.icon",
                   "settings": {
@@ -317,7 +320,7 @@
                   },
                   "blocks": {}
                 },
-                "text_T8RPP9": {
+                "text_fJ4xgp": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
@@ -344,9 +347,9 @@
                   "blocks": {}
                 }
               },
-              "block_order": ["icon_HDheD9", "text_T8RPP9"]
+              "block_order": ["icon_i7Hqtz", "text_fJ4xgp"]
             },
-            "group_PTzQ89": {
+            "group_NYHFqA": {
               "type": "group",
               "name": "Badge",
               "settings": {
@@ -386,7 +389,7 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "icon_VyJ9x8": {
+                "icon_QRa4Qk": {
                   "type": "icon",
                   "name": "t:names.icon",
                   "settings": {
@@ -398,7 +401,7 @@
                   },
                   "blocks": {}
                 },
-                "text_MVVFcK": {
+                "text_yV6QVm": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
@@ -425,9 +428,9 @@
                   "blocks": {}
                 }
               },
-              "block_order": ["icon_VyJ9x8", "text_MVVFcK"]
+              "block_order": ["icon_QRa4Qk", "text_yV6QVm"]
             },
-            "group_PLMHg4": {
+            "group_aL4iKG": {
               "type": "group",
               "name": "Badge",
               "settings": {
@@ -467,7 +470,7 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "icon_ymBwVa": {
+                "icon_gmNAgx": {
                   "type": "icon",
                   "name": "t:names.icon",
                   "settings": {
@@ -479,7 +482,7 @@
                   },
                   "blocks": {}
                 },
-                "text_Eh6NdX": {
+                "text_wFX7WB": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
@@ -506,16 +509,16 @@
                   "blocks": {}
                 }
               },
-              "block_order": ["icon_ymBwVa", "text_Eh6NdX"]
+              "block_order": ["icon_gmNAgx", "text_wFX7WB"]
             }
           },
-          "block_order": ["group_WVHtVT", "group_PTzQ89", "group_PLMHg4"]
+          "block_order": ["group_DKLKYe", "group_NYHFqA", "group_aL4iKG"]
         },
         "image": {
           "type": "image",
           "static": true,
           "settings": {
-            "image": "{{ closest.product.featured_image }}",
+            "image": "{{ section.settings.product.featured_image }}",
             "link": "",
             "image_ratio": "adapt",
             "width": "fill",
@@ -537,12 +540,12 @@
         }
       },
       "block_order": [
-        "text_HJEXbh",
-        "text_EMmhA7",
-        "variant_picker_qxnaPV",
-        "buy_buttons_DjJBCA",
-        "spacer_mQ4yTr",
-        "group_NV66JX"
+        "text_cKM8AW",
+        "text_wE3E6F",
+        "variant_picker_fcbWF3",
+        "buy_buttons_jqedht",
+        "spacer_TK8HEM",
+        "group_LXtjEW"
       ],
       "settings": {
         "product": "",
