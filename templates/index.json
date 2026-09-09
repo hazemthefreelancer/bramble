@@ -857,7 +857,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>Default content</h2>",
+            "text": "<h2>After selecting a product</h2>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
